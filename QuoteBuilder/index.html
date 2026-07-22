@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link ref="stylesheet" rel="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <label for="margin">Sales Margin</label>
+    <input type="number" id="margin" name="margin" required/>
+    
+    <form>  
+        <div class="costinput">
+            <label for="itemName">Item Name</label>
+            <input type="text" id="itemName" name="itemName"/>
+
+            <label for="ptNum">Part Number</label>
+            <input type="text" id="ptNum" name="ptNum" required/>
+
+            <label for="itemCost">Cost</label>
+            <input type="number" id="itemCost" name="itemCost" required/>
+
+        </div>    
+
+        <div class="itemAdd">
+            <input type="button" id="addBtn" name="addBtn" value="Add Item">
+        </div>
+    </form>
+
+    <h2>Total Cost: <h2 id="totCost"></h2></h2>
+    <h2>Total Sale: <h2 id="totSale"></h2></h2>
+
+    <div class="submit">
+        <input type="button" id="submitBtn" name="submitBtn" value="Submit">
+    </div>
+</body>
+</html>
