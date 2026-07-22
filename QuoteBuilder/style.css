@@ -1,0 +1,205 @@
+/* Modern Reset & Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Master Sales Margin Layout */
+label[for="margin"] {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+#margin {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 24px;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#margin:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Container for all dynamic input rows */
+#itemsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* Dynamic Item Input Row Card */
+.costinput {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e6e9ed;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    animation: fadeIn 0.25s ease-out;
+}
+
+/* Label styling inside the item rows */
+.costinput label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+.costinput label:first-of-type {
+    margin-top: 0;
+}
+
+/* General Input Field Styling */
+.costinput input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccd1d9;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #fafbfc;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.costinput input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #3498db;
+}
+
+/* Button Container & Base Button Styling */
+.itemAdd {
+    margin-bottom: 30px;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    border: none;
+}
+
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+/* Unique Button Themes */
+#addBtn {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: 1px dashed #bdc3c7;
+}
+
+#addBtn:hover {
+    background-color: #e2e7e9;
+    border-color: #7f8c8d;
+}
+
+#submitBtn {
+    background-color: #2ecc71;
+    color: white;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+    margin-top: 15px;
+}
+
+#submitBtn:hover {
+    background-color: #27ae60;
+}
+
+/* Totals Display Summary Section */
+h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #7f8c8d;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+h2 span {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+/* Target the total sale price uniquely to highlight it */
+h2:nth-of-type(2) {
+    border-left: 4px solid #3498db;
+}
+h2:nth-of-type(2) span {
+    color: #3498db;
+}
+
+/* Smooth fade-in animation for newly added rows */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style for the delete button */
+.removeBtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    transition: background-color 0.2s, transform 0.1s;
+    align-self: flex-start; /* Keeps button compact */
+}
+
+/* Hover state for a nice interactive feel */
+.removeBtn:hover {
+    background-color: #c0392b;
+}
+
+/* Tap/Click micro-interaction */
+.removeBtn:active {
+    transform: scale(0.97);
+}
+
+/* THE MAGIC: Automatically hide the delete button if there is only 1 item row left */
+.costinput:only-child .removeBtn {
+    display: none;
+}
