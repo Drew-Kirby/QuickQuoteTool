@@ -14,7 +14,7 @@ function calculateTotals() {
 
     const marginPercent = parseFloat(document.getElementById("margin").value) || 0;
 
-    let totSale = totCost * (1 + (marginPercent / 100));
+    let totSale = totCost / (1 - (marginPercent / 100));
 
     document.getElementById("totCost").textContent = `$${totCost.toFixed(2)}`;
     document.getElementById("totSale").textContent = `$${totSale.toFixed(2)}`;
